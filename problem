@@ -22,6 +22,18 @@ Y repeated N times = '**********';
 X in the middle of Y repeated N times = '*****A*****';
 */
 
-function middleMe(N, X, Y){
-    //get a working solution then try to make it less than 70 characters!
+const middleMe = (N, X, Y) => {
+  let half = N / 2;
+  let str = '';
+  if(N % 2 !== 0 || N === 0) {
+    return X;
+  }
+  while(str.length < N + 1) {
+    str += Y;
+    if(str.length === half) {
+      str += X;
+    }
+  } 
+  
+  return str;
 }
